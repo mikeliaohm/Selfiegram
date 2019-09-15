@@ -93,6 +93,7 @@ class SelfieStoreTests: XCTestCase {
 func createImage(text: String) -> UIImage {
     UIGraphicsBeginImageContext(CGSize(width: 100, height: 100))
     
+    // executes codes within defer only when outside of the current scope
     defer {
         UIGraphicsEndImageContext()
     }

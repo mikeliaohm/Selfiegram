@@ -14,11 +14,13 @@ class Selfie: Codable {
     let id: UUID
     var title = "New Selfie!"
     
+    // computed variables
     var image: UIImage? {
         get {
             return SelfieStore.shared.getImage(id: self.id)
         }
         set {
+            // try? or try! is used when a function could throw error
             try? SelfieStore.shared.setImage(id: self.id, image: newValue)
         }
     }
@@ -30,13 +32,11 @@ class Selfie: Codable {
     }
 }
 
-enum SelfieStoreError: Error {
-    case cannotSaveImage(UIImage?)
-}
-
 // SelfieStore cannot be subclassed
 final class SelfieStore {
     static let shared = SelfieStore()
+    
+    // declare a dictionary to hold id and image pair
     private var imageCache: [UUID: UIImage] = [:]
     
     var documentFolder: URL {
@@ -51,6 +51,7 @@ final class SelfieStore {
         let imageURL = documentFolder.appendingPathComponent("\(id.uuidString)-image.jpg")
         
         guard let imageData = try? Data(contentsOf: imageURL) else {
+            // must return the function when guard test fails
             return nil
         }
         
@@ -133,4 +134,9 @@ final class SelfieStore {
         try selfieData.write(to: destinationURL)
 //        throw SelfieStoreError.cannotSaveImage(nil)
     }
+}
+
+// implement the Error protocol
+enum SelfieStoreError: Error {
+    case cannotSaveImage(UIImage?)
 }
