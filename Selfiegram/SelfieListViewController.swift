@@ -17,7 +17,7 @@ class SelfieListViewController: UITableViewController {
         return formatter
     }()
     
-    var detailViewController: DetailViewController? = nil
+    var detailViewController: SelfieDetailViewController? = nil
     
     var selfies : [Selfie] = []
 
@@ -34,7 +34,7 @@ class SelfieListViewController: UITableViewController {
         
         if let split = splitViewController {
             let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? SelfieDetailViewController
         }
         
         let addSelfieButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createNewSelfie))
@@ -92,6 +92,22 @@ class SelfieListViewController: UITableViewController {
             } catch {
                 let title = selfieToRemove.title
                 showError(message: "Failed to delete \(title).")
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let selfie = selfies[indexPath.row]
+                if let controller = (
+                    segue.destination as? UINavigationController)?
+                    .topViewController as? SelfieDetailViewController {
+                    controller.selfie = selfie
+                    controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                    controller.navigationItem.leftItemsSupplementBackButton = true
+                }
             }
         }
     }
