@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SettingsTableViewController: UITableViewController {
     
     @IBOutlet weak var locationSwitch: UISwitch!
+    @IBOutlet weak var reminderSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,8 @@ class SettingsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        locationSwitch.isOn = UserDefaults.standard.bool(forKey: SettingsKey.saveLocation.rawValue)
     }
 
     // MARK: - Table view data source
@@ -28,10 +32,12 @@ class SettingsTableViewController: UITableViewController {
         UserDefaults.standard.set(locationSwitch.isOn, forKey: SettingsKey.saveLocation.rawValue)
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    @IBAction func reminderSwitchToggled(_ sender: UISwitch) {
     }
+    //    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
 
 }
