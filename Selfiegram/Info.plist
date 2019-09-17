@@ -55,5 +55,7 @@
 	<string>We use the camera to take those sweet, sweet selfies.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>We use the library to save your sweet, sweet selfies.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We&apos;ll use your location to add location info to your selfies</string>
 </dict>
 </plist>

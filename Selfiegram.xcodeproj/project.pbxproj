@@ -17,6 +17,7 @@
 		F7638A292321571100105C46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7638A272321571100105C46 /* LaunchScreen.storyboard */; };
 		F7638A342321571100105C46 /* SelfiegramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7638A332321571100105C46 /* SelfiegramTests.swift */; };
 		F7638A3F2321571100105C46 /* SelfiegramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7638A3E2321571100105C46 /* SelfiegramUITests.swift */; };
+		F775914423312B80001735CC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F775914323312B80001735CC /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		F7638A3A2321571100105C46 /* SelfiegramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelfiegramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7638A3E2321571100105C46 /* SelfiegramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfiegramUITests.swift; sourceTree = "<group>"; };
 		F7638A402321571100105C46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F775914323312B80001735CC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				F7638A1C2321571000105C46 /* AppDelegate.swift */,
 				F7638A1E2321571000105C46 /* SelfieListViewController.swift */,
+				F775914323312B80001735CC /* SettingsTableViewController.swift */,
 				F7638A202321571000105C46 /* SelfieDetailViewController.swift */,
 				F7638A222321571000105C46 /* Main.storyboard */,
 				F72BE237232545FF00BDC5A9 /* SelfieStore.swift */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7638A212321571000105C46 /* SelfieDetailViewController.swift in Sources */,
+				F775914423312B80001735CC /* SettingsTableViewController.swift in Sources */,
 				F72BE238232545FF00BDC5A9 /* SelfieStore.swift in Sources */,
 				F7638A1F2321571000105C46 /* SelfieListViewController.swift in Sources */,
 				F7638A1D2321571000105C46 /* AppDelegate.swift in Sources */,
